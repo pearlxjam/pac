@@ -1,0 +1,9 @@
+export 'package:pac/model/ad_banner.dart';
+export 'package:pac/model/category.dart';
+export 'package:pac/model/descuentos_usuario.dart';
+export 'package:pac/model/encuesta_usuario.dart';
+export 'package:pac/model/opciones_encuesta.dart';
+export 'package:pac/model/preguntas_encuestas.dart';
+export 'package:pac/model/product.dart';
+export 'package:pac/model/tag.dart';
+export 'package:pac/model/user.dart';
