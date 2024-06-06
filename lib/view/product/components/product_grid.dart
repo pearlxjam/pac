@@ -11,21 +11,16 @@ class ProductGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        // Título centrado
         Padding(
           padding: const EdgeInsets.only(top: 20, bottom: 15),
           child: Center(
             child: Text(
               "Descuentos",
-              style: TextStyle(
-                  fontSize: 24, // Puedes ajustar el tamaño del texto según tus preferencias
-                  fontWeight: FontWeight.bold,
-                  color: verde),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: verde),
             ),
           ),
         ),
-        const SizedBox(height: 10), // Espacio entre el título y la cuadrícula
-        // Cuadrícula de productos
+        const SizedBox(height: 10),
         Expanded(
           child: GridView.builder(
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
@@ -40,7 +35,6 @@ class ProductGrid extends StatelessWidget {
             itemBuilder: (context, index) => ProductCard(product: products[index]),
           ),
         ),
-        //const Footer(),
       ],
     );
   }

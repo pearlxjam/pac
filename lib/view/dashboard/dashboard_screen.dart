@@ -58,8 +58,6 @@ class DashboardScreen extends StatelessWidget {
               //BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.checkToSlot), label: 'Votaciones'),
               BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.tags), label: 'Descuentos'),
               BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.tableList), label: 'Categorías'),
-              // BottomNavigationBarItem(
-              //     icon: FaIcon(FontAwesomeIcons.circleUser), label: 'Mi cuenta')
             ],
           ),
         ),

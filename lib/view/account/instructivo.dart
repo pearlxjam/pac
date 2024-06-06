@@ -32,8 +32,7 @@ class Instructivo extends StatelessWidget {
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.6,
-                  child: SfPdfViewer.network(
-                      "https://www.tarjetavecinopac.com/assets/documentos/INSTRUCTIVO_OBTENCION_TARJETA_VECINO-2023.pdf"),
+                  child: SfPdfViewer.network("https://www.tarjetavecinopac.com/assets/documentos/INSTRUCTIVO_OBTENCION_TARJETA_VECINO-2023.pdf"),
                 ),
                 const SizedBox(height: 30),
                 Center(

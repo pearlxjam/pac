@@ -14,7 +14,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
 
-  //register adapters
   Hive.registerAdapter(AdBannerAdapter());
   Hive.registerAdapter(CategoryAdapter());
   Hive.registerAdapter(ProductAdapter());

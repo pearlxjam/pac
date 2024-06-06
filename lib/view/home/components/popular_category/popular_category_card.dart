@@ -23,10 +23,8 @@ class PopularCategoryCard extends StatelessWidget {
         },
         child: CachedNetworkImage(
           imageUrl: category.image,
-          // fadeInDuration: const Duration(days: 365),
           imageBuilder: (context, imageProvider) => Material(
             elevation: 1,
-            // shadowColor: Colors.grey.shade300,
             color: azul,
             borderRadius: BorderRadius.circular(10),
             child: Container(
@@ -34,13 +32,11 @@ class PopularCategoryCard extends StatelessWidget {
               height: 300,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.black12, width: 1.9), // Borde negro
-                // image: DecorationImage(image: imageProvider, fit: BoxFit.cover),
+                border: Border.all(color: Colors.black12, width: 1.9),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // const SizedBox(width: 5),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -51,8 +47,7 @@ class PopularCategoryCard extends StatelessWidget {
                           height: 100.0,
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10.0),
-                            child: Image.network(category.image, fit: BoxFit.cover // Personaliza la altura de la imagen
-                                ),
+                            child: Image.network(category.image, fit: BoxFit.cover),
                           ),
                         ),
                       ),
@@ -62,10 +57,6 @@ class PopularCategoryCard extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(10),
                       child: AutoSizeText(category.name, style: const TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold), maxLines: 3, maxFontSize: 13),
-                      //  Text(
-                      //   category.name,
-                      //   style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
-                      // ),
                     ),
                   ])
                 ],

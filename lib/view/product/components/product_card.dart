@@ -36,7 +36,6 @@ class ProductCard extends StatelessWidget {
                 child: Hero(
                   tag: product.images.first,
                   child: CachedNetworkImage(
-                    // imageUrl: baseUrl + product.images.first,
                     imageUrl: product.images.first,
                     placeholder: (context, url) => Shimmer.fromColors(
                       highlightColor: Colors.white,
@@ -66,7 +65,7 @@ class ProductCard extends StatelessWidget {
                   borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10),
-                  ), // Redondea los bordes
+                  ),
                 ),
                 child: Center(
                   child: Padding(

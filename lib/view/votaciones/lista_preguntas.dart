@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:pac/view/votaciones/lista_opciones.dart';
+import 'package:pac/view/view.dart';
 
 class ListaPreguntasEncuesta extends StatefulWidget {
   const ListaPreguntasEncuesta({
@@ -46,8 +46,8 @@ class _ListaPreguntasEncuestaState extends State<ListaPreguntasEncuesta> {
         ),
         child: Scrollbar(
           controller: _controller,
-          thumbVisibility: true, //always show scrollbar
-          thickness: 5, //width of scrollbar
+          thumbVisibility: true,
+          thickness: 5,
           radius: const Radius.circular(20),
           child: Column(
             children: <Widget>[
@@ -57,21 +57,18 @@ class _ListaPreguntasEncuestaState extends State<ListaPreguntasEncuesta> {
                   controller: _controller,
                   physics: const ScrollPhysics(),
                   itemCount: widget.totalDatosEncuesta,
-                  separatorBuilder: (context, index) =>
-                      const Divider(), // Agregar un separador entre elementos
+                  separatorBuilder: (context, index) => const Divider(),
                   itemBuilder: (BuildContext context, int index) {
                     final preguntas = widget.preguntasList[index];
                     int numPreg = index + 1;
                     int preguntaID = preguntas.id;
                     bool tieneDescripcion = preguntas.descripcion != null;
                     String tipoRespuesta = preguntas.tipoRespuesta;
-
                     return Padding(
                       padding: const EdgeInsets.only(top: 15),
                       child: Card(
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 10),
+                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                           child: Column(
                             children: [
                               Column(
@@ -90,13 +87,10 @@ class _ListaPreguntasEncuestaState extends State<ListaPreguntasEncuesta> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       SizedBox(
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.85,
+                                        width: MediaQuery.of(context).size.width * 0.85,
                                         child: AutoSizeText(
                                           preguntas.pregunta,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold),
+                                          style: const TextStyle(fontWeight: FontWeight.bold),
                                         ),
                                       ),
                                     ],
@@ -104,20 +98,14 @@ class _ListaPreguntasEncuestaState extends State<ListaPreguntasEncuesta> {
                                   Visibility(
                                     visible: tieneDescripcion,
                                     child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         SizedBox(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.85,
+                                          width: MediaQuery.of(context).size.width * 0.85,
                                           child: tieneDescripcion
                                               ? AutoSizeText(
                                                   preguntas.descripcion,
-                                                  style: const TextStyle(
-                                                      fontStyle:
-                                                          FontStyle.italic),
+                                                  style: const TextStyle(fontStyle: FontStyle.italic),
                                                 )
                                               : const Text(''),
                                         ),
@@ -131,7 +119,7 @@ class _ListaPreguntasEncuestaState extends State<ListaPreguntasEncuesta> {
                                 preguntaID: preguntaID,
                                 tipoRespuesta: tipoRespuesta,
                                 votacionesID: widget.votacionesID,
-                              )
+                              ),
                             ],
                           ),
                         ),
@@ -141,9 +129,7 @@ class _ListaPreguntasEncuestaState extends State<ListaPreguntasEncuesta> {
                 ),
               ),
               ElevatedButton.icon(
-                onPressed: () {
-                  // Agregar aquí la lógica para enviar las respuestas cuando se presione el botón "Votar".
-                },
+                onPressed: () {},
                 icon: const Icon(Icons.check),
                 label: const Text("Votar"),
               ),

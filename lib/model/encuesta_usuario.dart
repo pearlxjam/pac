@@ -23,7 +23,6 @@ class EncuestaUsuario {
     required this.estadoVotacion,
     required this.estadoVotante,
   });
-  factory EncuestaUsuario.fromJson(Map<String, dynamic> data) =>
-      _$EncuestaUsuarioFromJson(data);
+  factory EncuestaUsuario.fromJson(Map<String, dynamic> data) => _$EncuestaUsuarioFromJson(data);
   Map<String, dynamic> toJson() => _$EncuestaUsuarioToJson(this);
 }

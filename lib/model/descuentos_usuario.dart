@@ -25,7 +25,6 @@ class DescuentosUsuario {
     required this.imagenDescuento,
     required this.descuentoID,
   });
-  factory DescuentosUsuario.fromJson(Map<String, dynamic> data) =>
-      _$DescuentosUsuarioFromJson(data);
+  factory DescuentosUsuario.fromJson(Map<String, dynamic> data) => _$DescuentosUsuarioFromJson(data);
   Map<String, dynamic> toJson() => _$DescuentosUsuarioToJson(this);
 }

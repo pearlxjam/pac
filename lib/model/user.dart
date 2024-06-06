@@ -27,25 +27,14 @@ class User {
   @HiveField(8)
   String? direccion;
 
-  User(
-      {this.id,
-      this.fullName,
-      this.email,
-      this.image,
-      this.birthDay,
-      this.rut,
-      this.estado,
-      this.perfilID,
-      this.direccion});
+  User({this.id, this.fullName, this.email, this.image, this.birthDay, this.rut, this.estado, this.perfilID, this.direccion});
 
   factory User.fromJson(Map<String, dynamic> data) => User(
         id: data['id'].toString(),
         fullName: data['fullName'],
         email: data['email'],
         image: data['image'] == null ? null : data['image']['url'],
-        birthDay: data['fecha_nacimiento'] == null
-            ? null
-            : DateTime.parse(data['fecha_nacimiento']),
+        birthDay: data['fecha_nacimiento'] == null ? null : DateTime.parse(data['fecha_nacimiento']),
         rut: data['rut'],
         estado: data['estado'],
         perfilID: data['perfil_id'],

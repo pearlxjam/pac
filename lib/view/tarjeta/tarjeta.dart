@@ -7,8 +7,6 @@ class MiTarjeta extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final RxBool muestraReverso = false.obs;
-    // GlobalKey<FlipCardState> cardKey = GlobalKey<FlipCardState>();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
@@ -18,7 +16,7 @@ class MiTarjeta extends StatelessWidget {
             child: Column(children: [
               const Center(
                 child: Text(
-                  'Mi tarjeta Vecina',
+                  'Mi tarjeta Vecino',
                   style: TextStyle(fontSize: 24),
                 ),
               ),
@@ -28,40 +26,6 @@ class MiTarjeta extends StatelessWidget {
               const Center(
                 child: TarjetaFrente(),
               ),
-              // Center(
-              //   child: Obx(() => muestraReverso.isFalse ? const Text('Para ver el reverso presione sobre la tarjeta') : const Text('Para ver el frente presione sobre la tarjeta')),
-              // ),
-              // GestureDetector(
-              //   onTap: () {
-              //     muestraReverso.isFalse ? muestraReverso(true) : muestraReverso(false);
-              //   },
-              //   child: FlipCard(
-              //     key: cardKey,
-              //     fill: Fill.fillBack, // Fill the back side of the card to make in the same size as the front.
-              //     direction: FlipDirection.HORIZONTAL, // default
-              //     side: CardSide.FRONT, // The side to initially display.
-              //     front: const TarjetaFrente(),
-              //     back: const TarjetaAtras(),
-              //   ),
-              // ),
-              // AnimatedSwitcher(
-              //   duration: const Duration(milliseconds: 500),
-              //   child: Obx(
-              //     () => muestraReverso.isFalse
-              //         ? GestureDetector(
-              //             onTap: () {
-              //               muestraReverso(true);
-              //             },
-              //             child: const TarjetaFrente(),
-              //           )
-              //         : GestureDetector(
-              //             onTap: () {
-              //               muestraReverso(false);
-              //             },
-              //             child: const TarjetaAtras(),
-              //           ),
-              //   ),
-              // ),
               Center(
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width * 0.60,
@@ -74,16 +38,17 @@ class MiTarjeta extends StatelessWidget {
                         icon: const FaIcon(FontAwesomeIcons.arrowLeft),
                         label: const Text('Volver'),
                         style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.white, backgroundColor: Colors.blue, // Texto blanco
+                          foregroundColor: Colors.white,
+                          backgroundColor: Colors.blue,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10), // Radio de 10
+                            borderRadius: BorderRadius.circular(10),
                           ),
                         ),
                       )
                     ],
                   ),
                 ),
-              )
+              ),
             ]),
           ),
         ),

@@ -5,10 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:pac/controller/controllers.dart';
+import 'package:pac/model/modelos.dart';
 import 'package:pac/service/local_service/local_auth_service.dart';
 import 'package:pac/service/remote_service/remote_auth_service.dart';
-
-import '../model/user.dart';
 
 class AuthController extends GetxController {
   static AuthController instance = Get.find();

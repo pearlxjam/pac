@@ -54,8 +54,7 @@ class _CreaOpcionesRadioState extends State<CreaOpcionesRadio> {
                   child: Text(
                     opciones.opcion,
                     overflow: TextOverflow.ellipsis,
-                    maxLines:
-                        2, // Limitar a 2 líneas antes de mostrar puntos suspensivos
+                    maxLines: 2,
                   ),
                 ),
               ],

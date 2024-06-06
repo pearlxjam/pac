@@ -27,28 +27,29 @@ class ProductLoadingCard extends StatelessWidget {
                 ),
               ),
               Flexible(
-                  flex: 2,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Container(
-                        height: 20,
-                        color: Colors.grey.shade300,
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Container(
-                        height: 15,
-                        width: 75,
-                        color: Colors.grey.shade300,
-                      ),
-                    ],
-                  ))
+                flex: 2,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      height: 20,
+                      color: Colors.grey.shade300,
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Container(
+                      height: 15,
+                      width: 75,
+                      color: Colors.grey.shade300,
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),

@@ -1,3 +1,4 @@
+export 'package:pac/service/remote_service/remote_encuestas_usuario_service.dart';
 export 'package:pac/view/account/auth/activation_code_screen.dart';
 export 'package:pac/view/account/auth/change_pass.dart';
 export 'package:pac/view/account/auth/lista_descuentos.dart';
@@ -34,4 +35,9 @@ export 'package:pac/view/product_details/components/product_carousel_slider.dart
 export 'package:pac/view/product_details/product_details_screen.dart';
 export 'package:pac/view/tarjeta/tarjeta.dart';
 export 'package:pac/view/tarjeta/tarjeta_frente.dart';
+export 'package:pac/view/votaciones/lista_opciones.dart';
+export 'package:pac/view/votaciones/lista_preguntas.dart';
+export 'package:pac/view/votaciones/lista_procesos.dart';
+export 'package:pac/view/votaciones/muestra_proceso.dart';
+export 'package:pac/view/votaciones/opciones_check.dart';
 export 'package:pac/view/votaciones/votaciones_screen.dart';

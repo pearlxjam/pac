@@ -21,51 +21,50 @@ class HomeScreen extends StatelessWidget {
       ),
       drawer: const NavBar(),
       body: SafeArea(
-          child: Column(
-        children: [
-          // const
-          Expanded(
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Column(
-                children: [
-                  // const MainHeader(),
-                  Obx(() {
-                    if (homeController.bannerList.isNotEmpty) {
-                      return CarouselSliderView(bannerList: homeController.bannerList);
-                    } else {
-                      return const CarouselLoading();
-                    }
-                  }),
-                  const SectionTitle(
-                    title: "Categorías",
-                    seccion: 2,
-                  ),
-                  Obx(() {
-                    if (homeController.popularCategoryList.isNotEmpty) {
-                      return PopularCategory(categories: homeController.popularCategoryList);
-                    } else {
-                      return const PopularCategoryLoading();
-                    }
-                  }),
-                  const SectionTitle(
-                    title: "Descuentos",
-                    seccion: 1,
-                  ),
-                  Obx(() {
-                    if (homeController.popularProductList.isNotEmpty) {
-                      return PopularProduct(popularProducts: homeController.popularProductList);
-                    } else {
-                      return const PopularProductLoading();
-                    }
-                  }),
-                  const Footer(),
-                ],
+        child: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Column(
+                  children: [
+                    Obx(() {
+                      if (homeController.bannerList.isNotEmpty) {
+                        return CarouselSliderView(bannerList: homeController.bannerList);
+                      } else {
+                        return const CarouselLoading();
+                      }
+                    }),
+                    const SectionTitle(
+                      title: "Categorías",
+                      seccion: 2,
+                    ),
+                    Obx(() {
+                      if (homeController.popularCategoryList.isNotEmpty) {
+                        return PopularCategory(categories: homeController.popularCategoryList);
+                      } else {
+                        return const PopularCategoryLoading();
+                      }
+                    }),
+                    const SectionTitle(
+                      title: "Descuentos",
+                      seccion: 1,
+                    ),
+                    Obx(() {
+                      if (homeController.popularProductList.isNotEmpty) {
+                        return PopularProduct(popularProducts: homeController.popularProductList);
+                      } else {
+                        return const PopularProductLoading();
+                      }
+                    }),
+                    const Footer(),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
-      )),
+          ],
+        ),
+      ),
     );
   }
 }

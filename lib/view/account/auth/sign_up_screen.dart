@@ -8,8 +8,6 @@ import 'package:pac/const/const.dart';
 import 'package:pac/controller/controllers.dart';
 import 'package:pac/extention/string_extension.dart';
 import 'package:pac/view/view.dart';
-// import 'package:pac/view/account/auth/sign_in_screen.dart';
-// import 'package:pac/view/account/terminos.dart';
 import 'package:rut_utils/rut_utils.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -338,7 +336,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   ),
                                 ),
                                 Checkbox(
-                                  value: _acceptTerms, // Donde _acceptTerms es una variable bool que indicará si el usuario ha aceptado los términos.
+                                  value: _acceptTerms,
                                   onChanged: (bool? value) {
                                     setState(() {
                                       _acceptTerms = value ?? false;

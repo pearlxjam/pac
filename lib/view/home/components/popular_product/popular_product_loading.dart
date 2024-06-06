@@ -9,7 +9,12 @@ class PopularProductLoading extends StatelessWidget {
     return Container(
       height: 220,
       padding: const EdgeInsets.only(right: 10),
-      child: ListView.builder(scrollDirection: Axis.horizontal, physics: const BouncingScrollPhysics(), itemCount: 5, itemBuilder: (context, index) => const PopularProductLoadingCard()),
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        physics: const BouncingScrollPhysics(),
+        itemCount: 5,
+        itemBuilder: (context, index) => const PopularProductLoadingCard(),
+      ),
     );
   }
 }

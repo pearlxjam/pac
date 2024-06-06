@@ -7,7 +7,12 @@ class ProductLoadingGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 200, childAspectRatio: 2 / 3, crossAxisSpacing: 10, mainAxisSpacing: 10),
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: 200,
+        childAspectRatio: 2 / 3,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+      ),
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.all(10),
       itemCount: 6,

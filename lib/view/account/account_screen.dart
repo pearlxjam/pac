@@ -46,7 +46,7 @@ class AccountScreen extends StatelessWidget {
           const SizedBox(height: 50),
           Obx(
             () => authController.user.value == null
-                ? const SizedBox() // No muestra nada si authController.user.value es nulo
+                ? const SizedBox()
                 : buildAccountCard(
                     title: "Información",
                     onClick: () {
@@ -60,7 +60,7 @@ class AccountScreen extends StatelessWidget {
           ),
           Obx(
             () => authController.user.value == null
-                ? const SizedBox() // No muestra nada si authController.user.value es nulo
+                ? const SizedBox()
                 : buildAccountCard(
                     title: "Mis Descuentos",
                     onClick: () {
@@ -98,7 +98,7 @@ class AccountScreen extends StatelessWidget {
               }),
           Obx(
             () => authController.user.value == null
-                ? const SizedBox() // No muestra nada si authController.user.value es nulo
+                ? const SizedBox()
                 : buildAccountCard(
                     title: "Cambiar Contraseña",
                     onClick: () {
@@ -107,7 +107,7 @@ class AccountScreen extends StatelessWidget {
           ),
           Obx(
             () => authController.user.value != null
-                ? const SizedBox() // No muestra nada si authController.user.value es nulo
+                ? const SizedBox()
                 : buildAccountCard(
                     title: "Registro",
                     onClick: () {
@@ -121,46 +121,6 @@ class AccountScreen extends StatelessWidget {
                       } else {}
                     }),
           ),
-          // Obx(
-          //   () {
-          //     final user = authController.user.value;
-          //     if (user == null) {
-          //       return buildAccountCard(
-          //         title: "Activar código",
-          //         onClick: () {
-          //           Navigator.push(
-          //             context,
-          //             MaterialPageRoute(
-          //               builder: (context) => const ActivationCodeScreen(),
-          //             ),
-          //           );
-          //         },
-          //       );
-          //     } else {
-          //       return const SizedBox(); // No muestra nada si no cumple con las condiciones
-          //     }
-          //   },
-          // ),
-          // Obx(
-          //   () {
-          //     final user = authController.user.value;
-          //     if (user != null && user.estado == 4) {
-          //       return buildAccountCard(
-          //         title: "Verificar dirección",
-          //         onClick: () {
-          //           Navigator.push(
-          //             context,
-          //             MaterialPageRoute(
-          //               builder: (context) => const VerificaDireccion(),
-          //             ),
-          //           );
-          //         },
-          //       );
-          //     } else {
-          //       return const SizedBox(); // No muestra nada si no cumple con las condiciones
-          //     }
-          //   },
-          // ),
           Obx(
             () => buildAccountCard(
                 title: authController.user.value == null ? "Ingresar" : "Salir",
@@ -180,7 +140,7 @@ class AccountScreen extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.14,
                 );
               } else {
-                return SizedBox(height: MediaQuery.of(context).size.height * 0.23); // No muestra nada si no cumple con las condiciones
+                return SizedBox(height: MediaQuery.of(context).size.height * 0.23);
               }
             },
           ),

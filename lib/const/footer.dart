@@ -8,12 +8,10 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height *
-          0.1, // Ajusta la altura según tus necesidades
+      height: MediaQuery.of(context).size.height * 0.1, // Ajusta la altura según tus necesidades
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(
-              'assets/footer.png'), // Reemplaza 'tu_imagen.jpg' con la ruta de tu imagen
+          image: AssetImage('assets/footer.png'), // Reemplaza 'tu_imagen.jpg' con la ruta de tu imagen
           fit: BoxFit.cover,
         ),
       ),

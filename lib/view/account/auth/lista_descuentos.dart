@@ -6,7 +6,7 @@ import 'package:pac/const/const.dart';
 import 'package:pac/controller/controllers.dart';
 import 'package:pac/providers/provider_registra_descarga.dart';
 import 'package:pretty_qr_code/pretty_qr_code.dart';
-import 'package:shimmer/shimmer.dart'; // Importar el paquete intl para el formateo de fechas
+import 'package:shimmer/shimmer.dart';
 
 class ListaDescuentos extends StatelessWidget {
   const ListaDescuentos({
@@ -36,20 +36,10 @@ class ListaDescuentos extends StatelessWidget {
             separatorBuilder: (context, index) => const Divider(), // Agregar un separador entre elementos
             itemBuilder: (BuildContext context, int index) {
               final descuento = descuentosList[index];
-
-              // Formatear la fecha de inicio al formato deseado "dd-MM-yyyy"
               String fechaInicioFormateada = DateFormat('dd-MM-yyyy').format(DateTime.parse(descuento.fechaInicioDescuento));
-
-              // Formatear la fecha de término al formato deseado "dd-MM-yyyy"
               String fechaTerminoFormateada = DateFormat('dd-MM-yyyy').format(DateTime.parse(descuento.fechaTerminoDescuento));
-
-              // Formatear la fecha de descarga al formato deseado "dd-MM-yyyy"
               String fechaDescargaFormateada = DateFormat('dd-MM-yyyy').format(DateTime.parse(descuento.fechaDescarga));
-
-              // Comprobar si la fecha actual es mayor a la fecha de término
               bool esFechaPasada = DateTime.parse(descuento.fechaTerminoDescuento).isBefore(fechaActual);
-
-              // Color de fondo del Card
               Color cardColor = esFechaPasada ? Colors.grey : amarillo;
               Color imagenColor = esFechaPasada ? Colors.grey : Colors.transparent;
               return CachedNetworkImage(
@@ -63,7 +53,6 @@ class ListaDescuentos extends StatelessWidget {
                   },
                   child: Material(
                     elevation: 8,
-                    // shadowColor: Colors.grey.shade300,
                     borderRadius: BorderRadius.circular(12),
                     child: AnimatedContainer(
                       duration: const Duration(milliseconds: 300),

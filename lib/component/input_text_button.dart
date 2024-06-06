@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class InputTextButton extends StatelessWidget {
   final String title;
   final Function onClick;
-  const InputTextButton(
-      {super.key, required this.title, required this.onClick});
+  const InputTextButton({super.key, required this.title, required this.onClick});
 
   @override
   Widget build(BuildContext context) {

@@ -16,8 +16,7 @@ class SectionTitle extends StatelessWidget {
         children: [
           AutoSizeText(
             title,
-            style: const TextStyle(
-                fontSize: 15, color: Colors.black, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 15, color: Colors.black, fontWeight: FontWeight.bold),
             maxFontSize: 15,
           ),
           InkWell(

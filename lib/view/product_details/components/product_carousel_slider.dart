@@ -16,7 +16,6 @@ class _ProductCarouselSliderState extends State<ProductCarouselSlider> {
   @override
   @override
   Widget build(BuildContext context) {
-    // print(widget.images);
     return Padding(
       padding: const EdgeInsets.only(top: 10),
       child: Column(
@@ -30,14 +29,12 @@ class _ProductCarouselSliderState extends State<ProductCarouselSlider> {
                           child: Hero(
                             tag: e,
                             child: CachedNetworkImage(
-                              // imageUrl: baseUrl + e,
                               imageUrl: e,
-                              imageBuilder: (context, imageProvider) =>
-                                  Container(
+                              imageBuilder: (context, imageProvider) => Container(
                                 decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    image:
-                                        DecorationImage(image: imageProvider)),
+                                  color: Colors.white,
+                                  image: DecorationImage(image: imageProvider),
+                                ),
                               ),
                               placeholder: (context, url) => Shimmer.fromColors(
                                 highlightColor: Colors.white,
@@ -46,8 +43,7 @@ class _ProductCarouselSliderState extends State<ProductCarouselSlider> {
                                   color: Colors.grey.shade300,
                                 ),
                               ),
-                              errorWidget: (context, url, error) =>
-                                  const Center(
+                              errorWidget: (context, url, error) => const Center(
                                 child: Icon(
                                   Icons.error_outline,
                                   color: Colors.grey,
@@ -68,17 +64,6 @@ class _ProductCarouselSliderState extends State<ProductCarouselSlider> {
                       });
                     }),
               ),
-              // const SizedBox(
-              //   height: 30,
-              // ),
-              // Positioned(
-              //   child: IconButton(
-              //     onPressed: () {
-              //       Navigator.pop(context);
-              //     },
-              //     icon: const Icon(Icons.arrow_back),
-              //   ),
-              // )
             ],
           ),
           Row(
@@ -90,13 +75,12 @@ class _ProductCarouselSliderState extends State<ProductCarouselSlider> {
                 height: 6,
                 margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 3),
                 decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: _currentIndex == index
-                        ? Colors.grey.shade600
-                        : Colors.grey.shade400),
+                  shape: BoxShape.circle,
+                  color: _currentIndex == index ? Colors.grey.shade600 : Colors.grey.shade400,
+                ),
               );
             }).toList(),
-          )
+          ),
         ],
       ),
     );

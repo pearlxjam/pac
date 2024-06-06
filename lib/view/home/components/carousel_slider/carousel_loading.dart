@@ -13,9 +13,7 @@ class CarouselLoading extends StatelessWidget {
         children: [
           Container(
             margin: const EdgeInsets.all(10),
-            decoration: const BoxDecoration(
-                color: Colors.grey,
-                borderRadius: BorderRadius.all(Radius.circular(10))),
+            decoration: const BoxDecoration(color: Colors.grey, borderRadius: BorderRadius.all(Radius.circular(10))),
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(10)),
               child: AspectRatio(
@@ -33,39 +31,34 @@ class CarouselLoading extends StatelessWidget {
               Container(
                 height: 8,
                 width: 8,
-                decoration: const BoxDecoration(
-                    shape: BoxShape.circle, color: Colors.grey),
+                decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.grey),
               ),
               const SizedBox(width: 2),
               Container(
                 height: 8,
                 width: 8,
-                decoration: const BoxDecoration(
-                    shape: BoxShape.circle, color: Colors.grey),
+                decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.grey),
               ),
               const SizedBox(width: 2),
               Container(
                 height: 8,
                 width: 8,
-                decoration: const BoxDecoration(
-                    shape: BoxShape.circle, color: Colors.grey),
+                decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.grey),
               ),
               const SizedBox(width: 2),
               Container(
                 height: 8,
                 width: 8,
-                decoration: const BoxDecoration(
-                    shape: BoxShape.circle, color: Colors.grey),
+                decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.grey),
               ),
               const SizedBox(width: 2),
               Container(
                 height: 8,
                 width: 8,
-                decoration: const BoxDecoration(
-                    shape: BoxShape.circle, color: Colors.grey),
+                decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.grey),
               )
             ],
-          )
+          ),
         ],
       ),
     );

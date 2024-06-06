@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:pac/view/votaciones/muestra_proceso.dart';
+import 'package:pac/view/view.dart';
 import 'package:readmore/readmore.dart';
 
 class ListaProcesosVotaciones extends StatefulWidget {
@@ -15,8 +15,7 @@ class ListaProcesosVotaciones extends StatefulWidget {
   final dynamic votacionesList;
 
   @override
-  State<ListaProcesosVotaciones> createState() =>
-      _ListaProcesosVotacionesState();
+  State<ListaProcesosVotaciones> createState() => _ListaProcesosVotacionesState();
 }
 
 class _ListaProcesosVotacionesState extends State<ListaProcesosVotaciones> {
@@ -35,8 +34,7 @@ class _ListaProcesosVotacionesState extends State<ListaProcesosVotaciones> {
         child: ListView.separated(
           physics: const ScrollPhysics(),
           itemCount: widget.totalDatos,
-          separatorBuilder: (context, index) =>
-              const Divider(), // Agregar un separador entre elementos
+          separatorBuilder: (context, index) => const Divider(),
           itemBuilder: (BuildContext context, int index) {
             final votaciones = widget.votacionesList[index];
             String fechaInicioFormateada = votaciones.fechaInicio;
@@ -51,18 +49,12 @@ class _ListaProcesosVotacionesState extends State<ListaProcesosVotaciones> {
 
             String textoVotar = puedeVotar ? 'Puedes votar' : 'Ya votaste!';
 
-            // Color cardColor = puedeVotar ? Colors.white : Colors.grey;
-            // print(votaciones.imagen);
-            // if (votaciones.imagen != 'null') {
-            //   tieneImagen = true;
-            // }
             Color imagenColor = tieneImagen ? Colors.grey : Colors.transparent;
 
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: Card(
                 elevation: 4,
-                // color: cardColor, // Establecer el color del Card
                 color: Colors.white,
                 child: Padding(
                   padding: const EdgeInsets.all(8),
@@ -78,7 +70,7 @@ class _ListaProcesosVotacionesState extends State<ListaProcesosVotaciones> {
                               height: MediaQuery.of(context).size.height * 0.1,
                               child: ColorFiltered(
                                 colorFilter: ColorFilter.mode(
-                                  imagenColor, // Usar el color de fondo como filtro de color
+                                  imagenColor,
                                   BlendMode.saturation,
                                 ),
                                 child: tieneImagen
@@ -120,30 +112,18 @@ class _ListaProcesosVotacionesState extends State<ListaProcesosVotaciones> {
                                 Row(
                                   children: [
                                     SizedBox(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.8,
+                                      width: MediaQuery.of(context).size.width * 0.8,
                                       child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 20),
+                                        padding: const EdgeInsets.symmetric(horizontal: 20),
                                         child: ReadMoreText(
                                           votaciones.descripcion,
-                                          style: const TextStyle(
-                                              fontSize: 12,
-                                              color: Colors.grey,
-                                              fontWeight: FontWeight.bold,
-                                              fontStyle: FontStyle.italic),
+                                          style: const TextStyle(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
                                           trimLines: 1,
                                           trimMode: TrimMode.Line,
                                           trimCollapsedText: 'Mostrar más',
-                                          moreStyle: const TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.green),
+                                          moreStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.green),
                                           trimExpandedText: 'Mostrar menos',
-                                          lessStyle: const TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.red),
+                                          lessStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.red),
                                         ),
                                       ),
                                     ),
@@ -156,27 +136,18 @@ class _ListaProcesosVotacionesState extends State<ListaProcesosVotaciones> {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) =>
-                                              MuestraPreguntasProceso(
-                                                  votaciones: votaciones),
+                                          builder: (context) => MuestraPreguntasProceso(votaciones: votaciones),
                                         ),
                                       );
                                     }
                                   },
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 15),
+                                    padding: const EdgeInsets.symmetric(vertical: 15),
                                     child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        if (puedeVotar)
-                                          const FaIcon(
-                                              FontAwesomeIcons.checkToSlot,
-                                              color: Colors.green),
-                                        if (!puedeVotar)
-                                          const FaIcon(FontAwesomeIcons.check,
-                                              color: Colors.red),
+                                        if (puedeVotar) const FaIcon(FontAwesomeIcons.checkToSlot, color: Colors.green),
+                                        if (!puedeVotar) const FaIcon(FontAwesomeIcons.check, color: Colors.red),
                                         const SizedBox(
                                           width: 20,
                                         ),
@@ -189,7 +160,7 @@ class _ListaProcesosVotacionesState extends State<ListaProcesosVotaciones> {
                                       ],
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ),

@@ -25,8 +25,7 @@ class CategoryController extends GetxController {
       var result = await RemoteCategoryService().get();
       if (result != null) {
         categoryList.assignAll(categoryListFromJson(result.body));
-        _localCategoryService.assignAllCategories(
-            categories: categoryListFromJson(result.body));
+        _localCategoryService.assignAllCategories(categories: categoryListFromJson(result.body));
       }
     } finally {
       isCategoryLoading(false);

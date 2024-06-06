@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:pac/component/input_outline_button.dart';
+import 'package:pac/component/input_text_button.dart';
+import 'package:pac/component/input_text_field.dart';
 import 'package:pac/controller/controllers.dart';
 import 'package:pac/view/view.dart';
 import 'package:rut_utils/rut_utils.dart';
-
-import '../../../component/input_outline_button.dart';
-import '../../../component/input_text_button.dart';
-import '../../../component/input_text_field.dart';
 
 class ResetPassScreen extends StatefulWidget {
   const ResetPassScreen({super.key});
@@ -52,11 +51,7 @@ class _ResetPassScreenState extends State<ResetPassScreen> {
                 ),
                 InputTextField(
                   hint: "Ingrese su RUT ej.- 12345678-9",
-                  // inputFormatters: [
-                  //   RutFormatter(),
-                  // ],
                   title: 'Rut ej.- 12345678-9',
-
                   textEditingController: rutController,
                   validation: (String? value) {
                     if (value == null || value.isEmpty) {

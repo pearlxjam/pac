@@ -17,7 +17,6 @@ class PreguntasEncuestas {
     required this.estado,
     required this.tipoRespuesta,
   });
-  factory PreguntasEncuestas.fromJson(Map<String, dynamic> data) =>
-      _$PreguntasEncuestasFromJson(data);
+  factory PreguntasEncuestas.fromJson(Map<String, dynamic> data) => _$PreguntasEncuestasFromJson(data);
   Map<String, dynamic> toJson() => _$PreguntasEncuestasToJson(this);
 }

@@ -28,15 +28,12 @@ class BannerCard extends StatelessWidget {
             borderRadius: const BorderRadius.all(Radius.circular(10)),
             child: CachedNetworkImage(
               imageUrl: imageUrl,
-              progressIndicatorBuilder: (context, url, downloadProgress) =>
-                  Shimmer.fromColors(
+              progressIndicatorBuilder: (context, url, downloadProgress) => Shimmer.fromColors(
                 highlightColor: Colors.white,
                 baseColor: Colors.grey.shade300,
                 child: Container(
                   margin: const EdgeInsets.all(10),
-                  decoration: const BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  decoration: const BoxDecoration(color: Colors.grey, borderRadius: BorderRadius.all(Radius.circular(10))),
                   child: ClipRRect(
                     borderRadius: const BorderRadius.all(Radius.circular(10)),
                     child: AspectRatio(

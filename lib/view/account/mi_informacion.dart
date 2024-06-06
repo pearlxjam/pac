@@ -13,7 +13,6 @@ class InformacionPersonal extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: SingleChildScrollView(
-          // Wrap your content in a SingleChildScrollView
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
             child: Column(children: [

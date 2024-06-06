@@ -12,10 +12,11 @@ class PopularProduct extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.31,
       padding: const EdgeInsets.only(right: 10),
       child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          physics: const BouncingScrollPhysics(),
-          itemCount: popularProducts.length,
-          itemBuilder: (context, index) => PopularProductCard(product: popularProducts[index])),
+        scrollDirection: Axis.horizontal,
+        physics: const BouncingScrollPhysics(),
+        itemCount: popularProducts.length,
+        itemBuilder: (context, index) => PopularProductCard(product: popularProducts[index]),
+      ),
     );
   }
 }

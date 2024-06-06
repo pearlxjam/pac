@@ -35,11 +35,10 @@ class PopularProductCard extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.45, // Tamaño fijo
-                  height: 120, // Tamaño fijo
+                  width: MediaQuery.of(context).size.width * 0.45,
+                  height: 120,
                   color: Colors.white,
                   child: CachedNetworkImage(
-                    // imageUrl: baseUrl + product.images.first,
                     width: 200,
                     height: 120,
                     fit: BoxFit.contain,

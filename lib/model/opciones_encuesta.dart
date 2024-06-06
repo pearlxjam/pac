@@ -17,7 +17,6 @@ class OpcionesPreguntas {
     required this.estado,
     required this.opcion,
   });
-  factory OpcionesPreguntas.fromJson(Map<String, dynamic> data) =>
-      _$OpcionesPreguntasFromJson(data);
+  factory OpcionesPreguntas.fromJson(Map<String, dynamic> data) => _$OpcionesPreguntasFromJson(data);
   Map<String, dynamic> toJson() => _$OpcionesPreguntasToJson(this);
 }

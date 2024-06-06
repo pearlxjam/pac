@@ -5,17 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'package:pac/controller/controllers.dart';
-import 'package:pac/model/encuesta_usuario.dart';
+import 'package:pac/model/modelos.dart';
 import 'package:pac/service/remote_service/remote_encuestas_preguntas.dart';
-import 'package:pac/view/votaciones/lista_preguntas.dart';
+import 'package:pac/view/view.dart';
 
 class MuestraPreguntasProceso extends StatefulWidget {
   final EncuestaUsuario votaciones;
   const MuestraPreguntasProceso({super.key, required this.votaciones});
 
   @override
-  State<MuestraPreguntasProceso> createState() =>
-      _MuestraPreguntasProcesoState();
+  State<MuestraPreguntasProceso> createState() => _MuestraPreguntasProcesoState();
 }
 
 class _MuestraPreguntasProcesoState extends State<MuestraPreguntasProceso> {
@@ -36,8 +35,7 @@ class _MuestraPreguntasProcesoState extends State<MuestraPreguntasProceso> {
     if (puedeVotar) {
       var usuarioID = user?.id;
 
-      var url =
-          'https://www.tarjetavecinopac.com/api/buscaTotalRespuestasEncuesta.php?votacionID=$votacionID&usuarioID=$usuarioID';
+      var url = 'https://www.tarjetavecinopac.com/api/buscaTotalRespuestasEncuesta.php?votacionID=$votacionID&usuarioID=$usuarioID';
       var response = await http.get(Uri.parse(url));
       if (response.statusCode == 200) {
         List<dynamic> data = jsonDecode(response.body);
@@ -69,20 +67,6 @@ class _MuestraPreguntasProcesoState extends State<MuestraPreguntasProceso> {
         body: SizedBox(
           width: MediaQuery.of(context).size.width * 0.999,
           height: MediaQuery.of(context).size.height * 0.99,
-          // decoration: const BoxDecoration(
-          //   gradient: LinearGradient(
-          //     begin: Alignment.topCenter,
-          //     end: Alignment.bottomCenter,
-          //     // stops: [0.2, 0.2],
-          //     colors: [
-          //       Color.fromRGBO(249, 176, 54, 0.4),
-          //       Color.fromRGBO(195, 46, 38, 0.4),
-          //       Color.fromRGBO(188, 207, 0, 0.4),
-          //       Color.fromRGBO(61, 204, 230, 0.4),
-          //       Color.fromRGBO(0, 56, 194, 0.4),
-          //     ],
-          //   ),
-          // ),
           child: SafeArea(
             child: SingleChildScrollView(
               child: Column(
@@ -96,12 +80,10 @@ class _MuestraPreguntasProcesoState extends State<MuestraPreguntasProceso> {
                         child: Card(
                           elevation: 4,
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 20, horizontal: 10),
+                            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                             child: AutoSizeText(
                               widget.votaciones.titulo,
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold),
+                              style: const TextStyle(fontWeight: FontWeight.bold),
                               maxFontSize: 12,
                             ),
                           ),
@@ -115,34 +97,26 @@ class _MuestraPreguntasProcesoState extends State<MuestraPreguntasProceso> {
                       child: FutureBuilder(
                         future: getPreguntasEncuesta(widget.votaciones.id),
                         builder: (BuildContext context, AsyncSnapshot data) {
-                          if (data.connectionState != ConnectionState.waiting &&
-                              data.hasData) {
+                          if (data.connectionState != ConnectionState.waiting && data.hasData) {
                             var preguntasList = data.data;
                             var totalDatosEncuesta = preguntasList!.length;
                             if (totalDatosEncuesta > 0) {
                               return Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 10, vertical: 10),
-                                child: ListaPreguntasEncuesta(
-                                    totalDatosEncuesta: totalDatosEncuesta,
-                                    preguntasList: preguntasList,
-                                    votacionesID: widget.votaciones.id),
+                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                                child: ListaPreguntasEncuesta(totalDatosEncuesta: totalDatosEncuesta, preguntasList: preguntasList, votacionesID: widget.votaciones.id),
                               );
                             } else {
                               return Column(
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 10),
+                                    padding: const EdgeInsets.symmetric(vertical: 10),
                                     child: Center(
                                       child: Card(
                                         shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(10.0),
+                                          borderRadius: BorderRadius.circular(10.0),
                                         ),
                                         child: const Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20, vertical: 40),
+                                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
                                           child: Text(
                                             'No existen preguntas por el momento',
                                             style: TextStyle(
@@ -183,12 +157,10 @@ class _MuestraPreguntasProcesoState extends State<MuestraPreguntasProceso> {
                                 const Card(
                                   elevation: 4,
                                   child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        vertical: 20, horizontal: 10),
+                                    padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                                     child: AutoSizeText(
                                       'Estimado/a usted ya votó en este proceso, muchas gracias por su participación',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
+                                      style: TextStyle(fontWeight: FontWeight.bold),
                                       maxFontSize: 12,
                                     ),
                                   ),
@@ -200,10 +172,9 @@ class _MuestraPreguntasProcesoState extends State<MuestraPreguntasProceso> {
                                   onPressed: () {
                                     Navigator.pop(context);
                                   },
-                                  icon:
-                                      const FaIcon(FontAwesomeIcons.arrowLeft),
+                                  icon: const FaIcon(FontAwesomeIcons.arrowLeft),
                                   label: const Text('Volver'),
-                                )
+                                ),
                               ],
                             ),
                           ),

@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:pac/model/opciones_encuesta.dart';
+import 'package:pac/model/modelos.dart';
 import 'package:pac/service/remote_service/remote_encuestas_opciones.dart';
-import 'package:pac/view/votaciones/opciones_check.dart';
+import 'package:pac/view/view.dart';
 
 class ListaOpcionesRespuestas extends StatefulWidget {
-  const ListaOpcionesRespuestas(
-      {super.key,
-      required this.preguntaID,
-      required this.tipoRespuesta,
-      required this.votacionesID});
+  const ListaOpcionesRespuestas({super.key, required this.preguntaID, required this.tipoRespuesta, required this.votacionesID});
   final int preguntaID;
   final String tipoRespuesta;
   final int votacionesID;
 
   @override
-  State<ListaOpcionesRespuestas> createState() =>
-      _ListaOpcionesRespuestasState();
+  State<ListaOpcionesRespuestas> createState() => _ListaOpcionesRespuestasState();
 }
 
 class _ListaOpcionesRespuestasState extends State<ListaOpcionesRespuestas> {
@@ -30,8 +25,7 @@ class _ListaOpcionesRespuestasState extends State<ListaOpcionesRespuestas> {
   }
 
   void loadOpciones() async {
-    final data =
-        await getOpcionesPreguntas(widget.votacionesID, widget.preguntaID);
+    final data = await getOpcionesPreguntas(widget.votacionesID, widget.preguntaID);
     setState(() {
       opcionesList = data;
     });
@@ -42,9 +36,7 @@ class _ListaOpcionesRespuestasState extends State<ListaOpcionesRespuestas> {
     return Form(
       key: _formKey,
       child: SingleChildScrollView(
-        child: opcionesList != null
-            ? buildOpcionesList()
-            : const Center(child: CircularProgressIndicator()),
+        child: opcionesList != null ? buildOpcionesList() : const Center(child: CircularProgressIndicator()),
       ),
     );
   }
@@ -97,9 +89,10 @@ class _ListaOpcionesRespuestasState extends State<ListaOpcionesRespuestas> {
       );
     } else {
       return CreaOpcionesCheckList(
-          totalDatosOpciones: totalDatosOpciones,
-          opcionesList: opcionesList,
-          votacionesID: widget.votacionesID);
+        totalDatosOpciones: totalDatosOpciones,
+        opcionesList: opcionesList,
+        votacionesID: widget.votacionesID,
+      );
     }
   }
 }

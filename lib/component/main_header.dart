@@ -10,17 +10,13 @@ class MainHeader extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-            child: Container(
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: const BorderRadius.all(Radius.circular(10)),
-              boxShadow: <BoxShadow>[
-                BoxShadow(
-                    color: Colors.grey.withOpacity(0.6),
-                    offset: const Offset(0, 0),
-                    blurRadius: 8)
-              ]),
-          child: Obx(() => TextField(
+          child: Container(
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: const BorderRadius.all(Radius.circular(10)),
+                boxShadow: <BoxShadow>[BoxShadow(color: Colors.grey.withOpacity(0.6), offset: const Offset(0, 0), blurRadius: 8)]),
+            child: Obx(
+              () => TextField(
                 autofocus: false,
                 controller: productController.searchTextEditController,
                 onSubmitted: (val) {
@@ -36,24 +32,22 @@ class MainHeader extends StatelessWidget {
                             icon: const Icon(Icons.clear),
                             onPressed: () {
                               FocusScope.of(context).requestFocus(FocusNode());
-                              productController.searchTextEditController
-                                  .clear();
+                              productController.searchTextEditController.clear();
                               productController.searchVal.value = '';
                               productController.getProducts();
                             },
                           )
                         : null,
-                    contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 14, vertical: 16),
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 16),
                     fillColor: Colors.white,
                     filled: true,
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(24),
-                        borderSide: BorderSide.none),
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(24), borderSide: BorderSide.none),
                     hintText: "Buscar...",
                     prefixIcon: const Icon(Icons.search)),
-              )),
-        )),
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }

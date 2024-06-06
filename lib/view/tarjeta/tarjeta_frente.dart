@@ -22,7 +22,7 @@ class TarjetaFrente extends StatelessWidget {
               Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/tarjeta.png'), // Ruta de tu imagen
+                    image: AssetImage('assets/tarjeta.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -30,12 +30,15 @@ class TarjetaFrente extends StatelessWidget {
               Column(
                 children: [
                   Container(
-                    padding: const EdgeInsets.only(top: 85, right: 30, left: 30),
+                    padding: const EdgeInsets.only(top: 100, right: 30, left: 30),
                     alignment: Alignment.centerRight,
                     child: AutoSizeText(
                       authController.user.value!.fullName!.toUpperCase(),
                       style: GoogleFonts.montserrat(
-                        textStyle: const TextStyle(color: Color.fromARGB(255, 22, 2, 73), fontWeight: FontWeight.bold),
+                        textStyle: const TextStyle(
+                          color: Color.fromARGB(255, 22, 2, 73),
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       minFontSize: 15,
                     ),
@@ -46,7 +49,11 @@ class TarjetaFrente extends StatelessWidget {
                     child: Text(
                       authController.user.value!.rut!.toUpperCase(),
                       style: GoogleFonts.montserrat(
-                        textStyle: const TextStyle(color: Color.fromARGB(255, 22, 2, 73), fontWeight: FontWeight.bold, fontSize: 16.0),
+                        textStyle: const TextStyle(
+                          color: Color.fromARGB(255, 22, 2, 73),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.0,
+                        ),
                       ),
                     ),
                   ),

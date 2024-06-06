@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pac/controller/controllers.dart';
-import 'package:pac/model/encuesta_usuario.dart';
-import 'package:pac/service/remote_service/remote_encuestas_usuario_service.dart';
-import 'package:pac/view/votaciones/lista_procesos.dart';
+import 'package:pac/model/modelos.dart';
+import 'package:pac/view/view.dart';
 
 class Votaciones extends StatefulWidget {
   const Votaciones({super.key});

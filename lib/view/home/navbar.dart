@@ -125,23 +125,6 @@ class _NavBarState extends State<NavBar> {
                   )
                 : const SizedBox(),
           ),
-          // Obx(
-          //   () => authController.user.value == null
-          //       ? ListTile(
-          //           leading: const FaIcon(FontAwesomeIcons.keyboard),
-          //           title: const Text('Activar código'),
-          //           onTap: () {
-          //             Navigator.pop(context);
-          //             Navigator.push(
-          //               context,
-          //               MaterialPageRoute(
-          //                 builder: (context) => const ActivationCodeScreen(),
-          //               ),
-          //             );
-          //           },
-          //         )
-          //       : const SizedBox(),
-          // ),
           Obx(
             () => authController.user.value != null && authController.user.value?.estado == 1
                 ? ListTile(
@@ -163,7 +146,7 @@ class _NavBarState extends State<NavBar> {
             () => authController.user.value != null && authController.user.value?.estado == 1
                 ? ListTile(
                     leading: const FaIcon(FontAwesomeIcons.creditCard),
-                    title: const Text('Mi Tarjeta Vecina'),
+                    title: const Text('Mi Tarjeta Vecino'),
                     onTap: () {
                       Navigator.pop(context);
                       Navigator.push(
