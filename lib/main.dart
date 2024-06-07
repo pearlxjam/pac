@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      enableLog: false,
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       supportedLocales: const [Locale('es', '')],
       getPages: AppPage.list,
