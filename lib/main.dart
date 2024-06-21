@@ -22,7 +22,6 @@ void main() async {
 
   configLoading();
   checkPermisos();
-  print('carga');
   runApp(const MyApp());
 }
 
