@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pac/controller/controllers.dart';
@@ -22,7 +23,7 @@ class TarjetaFrente extends StatelessWidget {
               Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/tarjeta.png'),
+                    image: CachedNetworkImageProvider('https://www.tarjetavecinopac.com/assets/media/tarjeta/tarjeta.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
