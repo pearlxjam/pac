@@ -22,7 +22,7 @@ class TarjetaFrente extends StatelessWidget {
               Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/tarjeta.png'),
+                    image: NetworkImage('https://www.tarjetavecinopac.com/assets/media/tarjeta/tarjeta.png'), // Reemplaza con la URL de tu imagen
                     fit: BoxFit.cover,
                   ),
                 ),
