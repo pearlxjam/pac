@@ -16,7 +16,7 @@ class MiTarjeta extends StatelessWidget {
             child: Column(children: [
               const Center(
                 child: Text(
-                  'Mi tarjeta Vecino',
+                  'Mi tarjeta Vecina',
                   style: TextStyle(fontSize: 24),
                 ),
               ),

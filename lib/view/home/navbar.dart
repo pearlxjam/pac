@@ -146,7 +146,7 @@ class _NavBarState extends State<NavBar> {
             () => authController.user.value != null && authController.user.value?.estado == 1
                 ? ListTile(
                     leading: const FaIcon(FontAwesomeIcons.creditCard),
-                    title: const Text('Mi Tarjeta Vecino'),
+                    title: const Text('Mi Tarjeta Vecina'),
                     onTap: () {
                       Navigator.pop(context);
                       Navigator.push(
