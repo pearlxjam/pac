@@ -16,7 +16,7 @@ DescuentosUsuario _$DescuentosUsuarioFromJson(Map<String, dynamic> json) =>
       estadoDescuento: json['estadoDescuento'] as String?,
       nombreEmpresa: json['nombreEmpresa'] as String?,
       imagenDescuento: json['imagenDescuento'] as String?,
-      descuentoID: json['descuentoID'] as int,
+      descuentoID: (json['descuentoID'] as num).toInt(),
     );
 
 Map<String, dynamic> _$DescuentosUsuarioToJson(DescuentosUsuario instance) =>

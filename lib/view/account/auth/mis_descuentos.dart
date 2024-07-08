@@ -51,9 +51,11 @@ class MisDescuentos extends StatelessWidget {
                 } else {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                    child: ListaDescuentos(
-                      totalDescuentos: totalDescuentos,
-                      descuentosList: descuentosList,
+                    child: SingleChildScrollView(
+                      child: ListaDescuentos(
+                        totalDescuentos: totalDescuentos,
+                        descuentosList: descuentosList,
+                      ),
                     ),
                   );
                 }

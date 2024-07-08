@@ -8,14 +8,14 @@ part of 'encuesta_usuario.dart';
 
 EncuestaUsuario _$EncuestaUsuarioFromJson(Map<String, dynamic> json) =>
     EncuestaUsuario(
-      id: json['id'] as int,
+      id: (json['id'] as num).toInt(),
       titulo: json['titulo'] as String,
       fechaInicio: json['fechaInicio'] as String,
       fechaTermino: json['fechaTermino'] as String,
       descripcion: json['descripcion'] as String,
       imagen: json['imagen'] as String?,
-      estadoVotacion: json['estadoVotacion'] as int,
-      estadoVotante: json['estadoVotante'] as int,
+      estadoVotacion: (json['estadoVotacion'] as num).toInt(),
+      estadoVotante: (json['estadoVotante'] as num).toInt(),
     );
 
 Map<String, dynamic> _$EncuestaUsuarioToJson(EncuestaUsuario instance) =>

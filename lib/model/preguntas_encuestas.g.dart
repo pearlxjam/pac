@@ -8,7 +8,7 @@ part of 'preguntas_encuestas.dart';
 
 PreguntasEncuestas _$PreguntasEncuestasFromJson(Map<String, dynamic> json) =>
     PreguntasEncuestas(
-      id: json['id'] as int,
+      id: (json['id'] as num).toInt(),
       pregunta: json['pregunta'] as String,
       descripcion: json['descripcion'] as String?,
       estado: json['estado'] as String,

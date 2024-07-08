@@ -8,10 +8,10 @@ part of 'opciones_encuesta.dart';
 
 OpcionesPreguntas _$OpcionesPreguntasFromJson(Map<String, dynamic> json) =>
     OpcionesPreguntas(
-      id: json['id'] as int,
-      votacionID: json['votacionID'] as int,
-      preguntaID: json['preguntaID'] as int,
-      estado: json['estado'] as int,
+      id: (json['id'] as num).toInt(),
+      votacionID: (json['votacionID'] as num).toInt(),
+      preguntaID: (json['preguntaID'] as num).toInt(),
+      estado: (json['estado'] as num).toInt(),
       opcion: json['opcion'] as String,
     );
 

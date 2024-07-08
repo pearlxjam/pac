@@ -49,9 +49,9 @@ android {
         applicationId "cl.pedroaguirrecerda.pacdigital"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
-        minSdkVersion 25
+        minSdkVersion 26
         targetSdkVersion 33
-        versionCode 15
+        versionCode 16
         versionName flutterVersionName
     }
 
