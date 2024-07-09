@@ -52,8 +52,8 @@ class _CategoryCardState extends State<CategoryCard> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const SizedBox(height: 2),
-                    Image.network(
-                      widget.category.image,
+                    CachedNetworkImage(
+                      imageUrl: widget.category.image,
                       width: 140,
                       height: 110,
                     ),
