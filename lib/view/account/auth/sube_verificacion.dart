@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:image_picker/image_picker.dart';
+
 import 'package:pac/component/input_outline_button.dart';
 import 'package:pac/component/input_text_button.dart';
 import 'package:pac/controller/controllers.dart';
@@ -18,16 +18,16 @@ class _VerificaDireccionState extends State<VerificaDireccion> {
   final _formKey = GlobalKey<FormState>();
   File? image;
   bool muestraTomarImagen1 = false;
-  Future tomaImagen() async {
-    final image = await ImagePicker()
-        .pickImage(source: ImageSource.camera, imageQuality: 20);
-    if (image == null) return;
-    final imagenTemporal = File(image.path);
-    setState(() {
-      this.image = imagenTemporal;
-      muestraTomarImagen1 = true;
-    });
-  }
+  // Future tomaImagen() async {
+  //   final image = await ImagePicker()
+  //       .pickImage(source: ImageSource.camera, imageQuality: 20);
+  //   if (image == null) return;
+  //   final imagenTemporal = File(image.path);
+  //   setState(() {
+  //     this.image = imagenTemporal;
+  //     muestraTomarImagen1 = true;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class _VerificaDireccionState extends State<VerificaDireccion> {
                   child: Center(
                     child: GestureDetector(
                       onTap: () {
-                        tomaImagen();
+                        //tomaImagen();
                       },
                       child: Card(
                         elevation: 5,
@@ -124,7 +124,7 @@ class _VerificaDireccionState extends State<VerificaDireccion> {
                       ),
                     ),
                     onTap: () {
-                      tomaImagen();
+                      //tomaImagen();
                     },
                   ),
                 ),

@@ -200,23 +200,23 @@ class _NavBarState extends State<NavBar> {
                   )
                 : const SizedBox(),
           ),
-          Obx(
-            () => authController.user.value != null && authController.user.value?.estado == 4
-                ? ListTile(
-                    leading: const FaIcon(FontAwesomeIcons.fileArrowUp),
-                    title: const Text('Verificar dirección'),
-                    onTap: () {
-                      Navigator.pop(context);
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const VerificaDireccion(),
-                        ),
-                      );
-                    },
-                  )
-                : const SizedBox(),
-          ),
+          // Obx(
+          //   () => authController.user.value != null && authController.user.value?.estado == 4
+          //       ? ListTile(
+          //           leading: const FaIcon(FontAwesomeIcons.fileArrowUp),
+          //           title: const Text('Verificar dirección'),
+          //           onTap: () {
+          //             Navigator.pop(context);
+          //             Navigator.push(
+          //               context,
+          //               MaterialPageRoute(
+          //                 builder: (context) => const VerificaDireccion(),
+          //               ),
+          //             );
+          //           },
+          //         )
+          //       : const SizedBox(),
+          // ),
         ],
       ),
     );
